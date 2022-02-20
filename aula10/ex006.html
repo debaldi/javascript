@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>        
+        #area{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 145, 0);
+            color: #fff;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- https://developer.mozilla.org/pt-BR/docs/Web/API/EventTarget/addEventListener -->
+
+<!-- 
+    AÇÕES DIRETO NAS TAGs DO HTML
+    
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        interaja...
+    </div>
+ 
+    <script>
+        function clicar(){
+            var a = window.document.getElementById('area')
+            a.innerText = 'Clicou'
+            a.style.background = 'rgb(0, 255, 21)'
+        }
+        function entrar(){
+            var a = window.document.getElementById('area')
+            a.innerText = 'Entrou'
+        }
+        function sair(){
+            var a = window.document.getElementById('area')
+            a.innerText = 'Saiu'
+            a.style.background = 'rgb(255,145,0)'
+        }
+    </script>
+-->
+
+<!--
+    AÇÕES COM addEventListener
+     Com as Ações em addEventListener
+-->
+    <div id="area">
+        interaja...
+    </div>
+
+    <script>
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar(){       
+            a.innerText = 'Clicou'
+            a.style.background = 'rgb(0, 255, 21)'
+        }
+        function entrar(){
+            a.innerText = 'Entrou'
+        }
+        function sair(){
+            a.innerText = 'Saiu'
+            a.style.background = 'rgb(255,145,0)'
+        }
+    </script>
+
+</body>
+</html>
