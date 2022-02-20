@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de DOM</title>
+
+    <style>
+        body{background-color: rgb(105, 105, 173); color: white;font: normal 20pt Arial;}
+        h1{ 
+            color: rgb(0, 176, 199);
+            border: ;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Aprendendo DOM</h1>
+
+    <div>Aqui vai o resultado</div>
+    <div>Por nome e posição da <strong>Tag</strong>.</div>
+    
+    <div id="msgId">Por ID</div>
+    <div class="msgClass"> Por Class</div>
+    <div name="msgNome"> Por Name</div>
+    <div id="msgQuery"> Por QuerySelector</div>
+    
+    <br>
+    
+    <script>
+        //Por Marca
+        var div1 = window.document.getElementsByTagName('div')[1]
+        document.write(div1.innerText) //Somente o texto sem CSS
+        document.write("<br>") //Pular Linha
+        document.write(div1.innerHTML) //Texto e o css do texto
+        document.write("<br>");//Pular Linha 
+
+        //Por ID
+        var porId = window.document.getElementById('msgId')
+        document.write(porId.innerText)
+        porId.style.textDecoration = 'underline'
+        document.write("<br>") //Pular Linha
+        
+        // Comando Inteiro Sem CSS
+        /*window.document.getElementById('msgId').innerText = 'Comando Inteiro Por ID sem css'*/
+        
+        // Comando Inteiro Com CSS
+        /*window.document.getElementById('msgId').innerHTML = '<strong>Comando Inteito Por ID com css</strong>'*/
+        
+
+        //Por Class
+        var porClass = window.document.getElementsByClassName('msgClass')[0]
+        document.write(porClass.innerText)
+        porClass.style.border= '3px solid black'
+        document.write("<br>");//Pular Linha
+
+        //Por Nome
+        var porName = window.document.getElementsByName('msgNome')[0]
+        document.write(porName.innerText)
+        porName.style.color = '#33ff00'
+        document.write('<br>') //Pular Linha
+
+        //Por Seletor 
+        var porQuery = document.querySelector('div#msgQuery')
+        document.write(porQuery.innerText)
+        porQuery.style.color = 'black'
+        porQuery.style.background = 'white'
+        porQuery.innerHTML = 'Por QuerySelector.'
+
+        //Alterando a cor do body
+        var corpo = window.document.body
+        corpo.style.background = 'blue'
+    </script>
+    
+</body>
+</html>
