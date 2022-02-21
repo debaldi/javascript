@@ -1,3 +1,5 @@
+// CONDIÇÃO COMPOSTA
+
 var pais = 'França'
 
 if (pais == 'Brasil'){
