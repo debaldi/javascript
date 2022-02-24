@@ -8,24 +8,28 @@ function contar(){
     var fim = parseInt(txtfim.value)
     var passo = parseInt(txtpasso.value)
 
+// Validações 
     if(txtinicio.value.length == 0){
         window.alert('Verefique o valor de início')
     }else if(parseInt(txtfim.value) < parseInt(txtinicio.value) || txtfim.value.length == 0){
         window.alert('O Valor Final não pode ser Menor que o Valor Inicial e nem estar Vazio!')
     }else if(parseInt(txtpasso.value) == 0){
         window.alert('Valor de Passo não pode ser 0(zero)')
-    }else if(txtpasso.value.length == 0){
 
+// Caso o campo Passo esteja sem valor ele recebe o valor de Inicio
+    }else if(txtpasso.value.length == 0){
+        window.alert('Valor de Passo pegado de valor Inicial')
         passo = inicio
-       
-        res.innerHTML = 'Valor de Passo pegado de valor Inicial! <br>'
-        res.innerHTML += 'Contando: <br>'    
+               
+        res.innerHTML = 'Contando: <br>'    
         
         while(inicio <= fim){            
             res.innerHTML += `${inicio} `            
             inicio += passo
         }        
         res.innerHTML += '!.'
+        
+// Se todas as Validações forem False        
     }else{
         
         res.innerHTML = 'Contando: <br>'            
