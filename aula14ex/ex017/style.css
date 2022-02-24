@@ -1,9 +1,9 @@
-*{
+/**{
     margin: 0;
     padding: 0;
     border: 0;
     box-sizing: border-box;
-}
+}*/
 body{
     background: rgb(70, 142, 236);
     font: normal 15px Arial;
@@ -14,6 +14,7 @@ header{
     text-align: center;
     margin: 15px 0px;
 }
+
 section{
     background-color: white;
     border-radius: 10px;
@@ -23,6 +24,19 @@ section{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.363);   
 }
 
+section label, input{
+    font-size: 15px;
+    font-weight: 600;
+
+}
+
+table{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.253);
+    margin-top: 10px;
+}
+table td{
+    padding: 10px;
+}
 footer{
     color: white;
     text-align: center;
