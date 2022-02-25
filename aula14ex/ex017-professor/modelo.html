@@ -4,26 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sequência de Números</title>
+    <title>Gerador de Tabuada</title>
     <link rel="stylesheet" href="style.css">    
 </head>
 <body>
     <header>
-        <h1>Vamos Contar</h1>
+        <h1>Gerador de Tabuada</h1>
     </header>
     
     <section>
-        <div>
-            <p>Início: <input type="number" name="inicio" id="txti"></p>
-
-            <p>Fim: <input type="number" name="fim" id=txtf></p>
-
-            <p>Passo: <input type="number" name="passo" id="txtp"></p>
-
-            <p><input type="button" value="Contar" onclick="contar()"></p>
+        <div id="campos">
+            Número: <input type="number" name="num" id="txtn">
+            <input type="button" value="Gerar Tabuada" onclick="tabuada()">
         </div>
-        <div id="res">
-            Preparando a contagem...
+        <div>
+            <select name="tabuada" id="seltab" size="10">
+                <option>Digite um número acima</option>
+            </select>
         </div>
     </section>
 

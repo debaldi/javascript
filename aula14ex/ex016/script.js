@@ -1,42 +1,33 @@
 function contar(){
-    var txtinicio = document.getElementById('txtinicio')
-    var txtfim = document.getElementById('txtfim')
-    var txtpasso = document.getElementById('txtpasso')
-    var res = document.getElementById('res')
-    
-    var inicio = parseInt(txtinicio.value)
-    var fim = parseInt(txtfim.value)
-    var passo = parseInt(txtpasso.value)
+    let ini = document.getElementById('txti')
+    let fim = document.getElementById('txtf')
+    let passo = document.getElementById('txtp')
+    let res = document.getElementById('res')
 
-// Validações 
-    if(txtinicio.value.length == 0){
-        window.alert('Verefique o valor de início')
-    }else if(parseInt(txtfim.value) < parseInt(txtinicio.value) || txtfim.value.length == 0){
-        window.alert('O Valor Final não pode ser Menor que o Valor Inicial e nem estar Vazio!')
-    }else if(parseInt(txtpasso.value) == 0){
-        window.alert('Valor de Passo não pode ser 0(zero)')
-
-// Caso o campo Passo esteja sem valor ele recebe o valor de Inicio
-    }else if(txtpasso.value.length == 0){
-        window.alert('Valor de Passo pegado de valor Inicial')
-        passo = inicio
-               
-        res.innerHTML = 'Contando: <br>'    
+    if(ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0){
+        res.innerHTML= 'Impossível contar!'
+    } else {
+        res.innerHTML = 'Contando: <br>'
+        let i = Number(ini.value)
+        let f = Number(fim.value)
+        let p = Number(passo.value)
+         
+        if(p <= 0){
+            window.alert('Passo Inválido! Considerando Passo = 1')
+            p = 1
+        }
+        if(i < f){
+            // Contagem Crescente
+            for(let c = i; c <= f; c += p){
+                res.innerHTML += ` ${c} \u{1F449}`
+            }
+        } else {
+            // Contagem Regressiva
+            for(let c = i; c >= f; c-= p){
+                res.innerHTML += ` ${c} \u{1F449}`
+            }
+        }
+        res.innerHTML += `\u{1F3C1}`
         
-        while(inicio <= fim){            
-            res.innerHTML += `${inicio} `            
-            inicio += passo
-        }        
-        res.innerHTML += '!.'
-        
-// Se todas as Validações forem False        
-    }else{
-        
-        res.innerHTML = 'Contando: <br>'            
-        while(inicio <= fim){            
-            res.innerHTML += `${inicio} `            
-            inicio += passo
-        }        
-        res.innerHTML += '!'
     }
-} 
+}
